@@ -43,14 +43,15 @@
             this.label = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.booksNumber = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.bunifuCustomDataGrid2 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.name = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.author = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.quantity = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.author = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.update = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.date = new Bunifu.Framework.UI.BunifuDatepicker();
@@ -91,6 +92,7 @@
             this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(571, 166);
             this.bunifuCustomDataGrid1.TabIndex = 0;
             this.bunifuCustomDataGrid1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuCustomDataGrid1_CellClick);
+            this.bunifuCustomDataGrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuCustomDataGrid1_CellContentClick);
             // 
             // bunifuCustomLabel1
             // 
@@ -205,12 +207,13 @@
             this.bunifuCustomDataGrid2.EnableHeadersVisualStyles = false;
             this.bunifuCustomDataGrid2.HeaderBgColor = System.Drawing.Color.SeaGreen;
             this.bunifuCustomDataGrid2.HeaderForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomDataGrid2.Location = new System.Drawing.Point(33, 275);
+            this.bunifuCustomDataGrid2.Location = new System.Drawing.Point(67, 279);
             this.bunifuCustomDataGrid2.Name = "bunifuCustomDataGrid2";
             this.bunifuCustomDataGrid2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.bunifuCustomDataGrid2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.bunifuCustomDataGrid2.Size = new System.Drawing.Size(571, 166);
             this.bunifuCustomDataGrid2.TabIndex = 0;
+            this.bunifuCustomDataGrid2.Visible = false;
             this.bunifuCustomDataGrid2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuCustomDataGrid2_CellContentClick);
             // 
             // bunifuCustomLabel4
@@ -248,41 +251,6 @@
             this.name.TabIndex = 6;
             this.name.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // bunifuCustomLabel5
-            // 
-            this.bunifuCustomLabel5.AutoSize = true;
-            this.bunifuCustomLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel5.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(85, 371);
-            this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
-            this.bunifuCustomLabel5.Size = new System.Drawing.Size(77, 13);
-            this.bunifuCustomLabel5.TabIndex = 5;
-            this.bunifuCustomLabel5.Text = "Book Author";
-            // 
-            // author
-            // 
-            this.author.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.author.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.author.BackColor = System.Drawing.Color.Gainsboro;
-            this.author.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.author.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.author.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.author.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.author.HintForeColor = System.Drawing.Color.Empty;
-            this.author.HintText = "";
-            this.author.isPassword = false;
-            this.author.LineFocusedColor = System.Drawing.Color.Blue;
-            this.author.LineIdleColor = System.Drawing.Color.Gray;
-            this.author.LineMouseHoverColor = System.Drawing.Color.Blue;
-            this.author.LineThickness = 3;
-            this.author.Location = new System.Drawing.Point(164, 351);
-            this.author.Margin = new System.Windows.Forms.Padding(4);
-            this.author.MaxLength = 32767;
-            this.author.Name = "author";
-            this.author.Size = new System.Drawing.Size(145, 33);
-            this.author.TabIndex = 6;
-            this.author.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
             // bunifuCustomLabel6
             // 
             this.bunifuCustomLabel6.AutoSize = true;
@@ -318,6 +286,17 @@
             this.quantity.TabIndex = 6;
             this.quantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
+            // bunifuCustomLabel5
+            // 
+            this.bunifuCustomLabel5.AutoSize = true;
+            this.bunifuCustomLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel5.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(85, 371);
+            this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
+            this.bunifuCustomLabel5.Size = new System.Drawing.Size(77, 13);
+            this.bunifuCustomLabel5.TabIndex = 5;
+            this.bunifuCustomLabel5.Text = "Book Author";
+            // 
             // bunifuCustomLabel7
             // 
             this.bunifuCustomLabel7.AutoSize = true;
@@ -328,6 +307,30 @@
             this.bunifuCustomLabel7.Size = new System.Drawing.Size(91, 13);
             this.bunifuCustomLabel7.TabIndex = 5;
             this.bunifuCustomLabel7.Text = "Prchased Date";
+            // 
+            // author
+            // 
+            this.author.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.author.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.author.BackColor = System.Drawing.Color.Gainsboro;
+            this.author.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.author.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.author.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.author.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.author.HintForeColor = System.Drawing.Color.Empty;
+            this.author.HintText = "";
+            this.author.isPassword = false;
+            this.author.LineFocusedColor = System.Drawing.Color.Blue;
+            this.author.LineIdleColor = System.Drawing.Color.Gray;
+            this.author.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.author.LineThickness = 3;
+            this.author.Location = new System.Drawing.Point(164, 351);
+            this.author.Margin = new System.Windows.Forms.Padding(4);
+            this.author.MaxLength = 32767;
+            this.author.Name = "author";
+            this.author.Size = new System.Drawing.Size(145, 33);
+            this.author.TabIndex = 6;
+            this.author.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // update
             // 
@@ -363,6 +366,7 @@
             this.update.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.update.Textcolor = System.Drawing.Color.White;
             this.update.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.update.Click += new System.EventHandler(this.update_Click);
             // 
             // bunifuCustomLabel9
             // 
@@ -436,16 +440,17 @@
         private Bunifu.Framework.UI.BunifuCustomLabel booksNumber;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
         private Bunifu.Framework.UI.BunifuCustomLabel label;
+        private System.Windows.Forms.ColorDialog colorDialog1;
         private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
         private Bunifu.Framework.UI.BunifuMaterialTextbox name;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox author;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
         private Bunifu.Framework.UI.BunifuMaterialTextbox quantity;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel9;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox author;
         private Bunifu.Framework.UI.BunifuFlatButton update;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel9;
         private Bunifu.Framework.UI.BunifuDatepicker date;
     }
 }

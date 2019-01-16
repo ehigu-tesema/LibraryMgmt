@@ -76,6 +76,12 @@
     <Compile Include="addBook.Designer.cs">
       <DependentUpon>addBook.cs</DependentUpon>
     </Compile>
+    <Compile Include="addStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addStudent.Designer.cs">
+      <DependentUpon>addStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="bookInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,8 +107,17 @@
     <Compile Include="Staff.Designer.cs">
       <DependentUpon>Staff.cs</DependentUpon>
     </Compile>
+    <Compile Include="viewStudentInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewStudentInfo.Designer.cs">
+      <DependentUpon>viewStudentInfo.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="addBook.resx">
       <DependentUpon>addBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addStudent.resx">
+      <DependentUpon>addStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="bookInfo.resx">
       <DependentUpon>bookInfo.cs</DependentUpon>
@@ -121,6 +136,9 @@
     </Compile>
     <EmbeddedResource Include="Staff.resx">
       <DependentUpon>Staff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewStudentInfo.resx">
+      <DependentUpon>viewStudentInfo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="libraryManagementDataSet.xsc">
       <DependentUpon>libraryManagementDataSet.xsd</DependentUpon>

@@ -109,5 +109,22 @@ namespace Lib
             addBook book = new addBook();
             book.Show();
         }
+
+        private void viewBooksInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bookInfo info = new bookInfo();
+            info.Show();
+        }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void registerStudentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            addStudent std = new addStudent();
+            std.Show();
+        }
     }
 }

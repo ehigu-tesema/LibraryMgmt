@@ -16,7 +16,7 @@ namespace Lib
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new bookInfo());
+            Application.Run(new viewStudentInfo());
         }
     }
 }

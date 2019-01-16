@@ -101,8 +101,10 @@ namespace Lib
 
         private void bunifuCustomDataGrid1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+                
             try
             {
+                bunifuCustomDataGrid2.Visible = true;
             int i;
             i = Convert.ToInt32(bunifuCustomDataGrid1.SelectedCells[0].Value.ToString());
                
@@ -130,6 +132,34 @@ namespace Lib
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void update_Click(object sender, EventArgs e)
+        {
+            bunifuCustomDataGrid2.Visible = true;
+            int i;
+            i = Convert.ToInt32(bunifuCustomDataGrid1.SelectedCells[0].Value.ToString());
+
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+            con.Open();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("Update book set name='" + name.Text + "',author='" + author.Text + "',quantity='" + quantity.Text + "',pdate='" + date.Text + "' where id='"+i+"' ",con);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Update Success");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void bunifuCustomDataGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
